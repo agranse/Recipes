@@ -16,6 +16,9 @@ To avoid checking secrets into source control, we use files that are marked as i
 - Copy `.env.example` to `.env` and set a password in the new file. This will be your database password for local development.
 - Copy `src/main/resources/application-local.yml.example` to `src/main/resources/application-local.yml`. Set the database conneciton password to the same value used in the previous step.
 
+## First Run
+Create the database by running `docker compose up` from the project root folder. Once the database has been created, you can run it from docker compose or docker desktop.
+
 ## Running
 In your IDE run configuration, set the Spring profile to `local`
 
