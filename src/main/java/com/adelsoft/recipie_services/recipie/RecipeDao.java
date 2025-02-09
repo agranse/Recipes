@@ -5,6 +5,8 @@ import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.Optional;
+
 
 public interface RecipeDao {
 
@@ -18,11 +20,11 @@ public interface RecipeDao {
             )
             """)
     @GetGeneratedKeys
-    Long insert(@BindBean Recipe carMaker);
+    Long insert(@BindBean RecipeCreationRequest creationRequest);
 
     @SqlQuery("""
             SELECT * FROM recipe.Recipes
             WHERE id = :id
             """)
-    Recipe findById(Long id);
+    Optional<Recipe> findById(Long id);
 }

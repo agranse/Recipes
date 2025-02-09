@@ -1,0 +1,9 @@
+ALTER TABLE recipe.Recipes
+    ADD Instructions TEXT NOT NULL;
+
+ALTER TABLE recipe.Recipes
+    ADD TimeCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL;
+
+ALTER TABLE recipe.Recipes
+    ADD TimeModified TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP;
+
